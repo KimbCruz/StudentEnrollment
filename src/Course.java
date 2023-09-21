@@ -1,28 +1,31 @@
 import java.util.HashMap;
-import java.util.Map;
 import java.time.LocalTime;
 
 public class Course {
+    //Initialize attributes
+    private int courseNumber;
     private static int courseID = 1000;
     private String courseName;
     private LocalTime startTime;
     private LocalTime endTime;
-    private HashMap<Integer, Student> roster = new HashMap<Integer, Student>();
+    private HashMap<Integer, Student> roster;
 
 	public Course(String name, LocalTime startTime, LocalTime endTime) {
         this.setCourseID();
         this.setCourseName(name);
         this.setStartTime(startTime);
         this.setEndTime(endTime);
+        this.roster = new HashMap<Integer, Student>();
     }
 	//Set Course unique Code
 	public void setCourseID(){
-		courseID = courseID++;
+		courseNumber = courseID;
+        courseID++;
 	}
 
-	//Get Course unique Code
+	//Get Course unique Codes
 	public int getCourseID(){
-		return courseID;
+		return courseNumber;
 	}
 
 	//Get Course Name
@@ -63,17 +66,19 @@ public class Course {
 	//Remove students from the Course Roster
 	public void removeFromRoster(Student student){
         if(roster.containsKey(student.getStudentID())) {
-            this.roster.remove(student.getStudentID(), student);
+            this.roster.remove(student.getStudentID());
         } else {
-            System.out.println("Student not found in course.");
+            System.out.println("Student not found in course %s with course ID %d.".formatted(this.courseName, this.courseNumber));
         }
+        System.out.println("--------------------------------------------------");
 	}
 
+    //Display the Roster for that course
 	public void displayRoster() {
         System.out.println("Students enrolled in course %s with ID: %d".formatted(this.courseName, this.getCourseID()));
         int counter = 1;
-        for(Map.Entry<Integer, Student> s : roster.entrySet()) {
-            System.out.println("%d. %d".formatted(counter, s.getKey()));
+        for(Integer id : roster.keySet()) {
+            System.out.println("%d. %d".formatted(counter, id));
             counter++;
         }
     }

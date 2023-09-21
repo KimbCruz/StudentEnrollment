@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.time.LocalTime;
 
 public class Student {
-	//Initialize 
+	//Initialize attributes
+	private int studentNumber;
 	private static int studentID = 10000001;
 	private ArrayList<Course> courses = new ArrayList<Course>();
 	
@@ -13,14 +14,15 @@ public class Student {
 	
 	// Returns student's ID number
 	public int getStudentID() {
-		return studentID;
+		return studentNumber;
 	}
 
 	// Sets student's ID number
 	public void setStudentID() {
 		// Increments student ID by one for every student that is added
 		// Ensures student IDs are unique
-		studentID = studentID++;
+		studentNumber = studentID;
+		studentID++;
 	}
 	
 	// Adds a course to the student's schedule
@@ -35,9 +37,9 @@ public class Student {
 		}
 		// If course not already in student's schedule and course does not overlap with other courses, add the course to the student's schedule
 		if(!courses.contains(course) && !overlap) {
-			courses.add(course);			
+			courses.add(course);	
 		} else {
-			System.out.println("Unable to add course. Cannot have course times overlap.");
+			System.out.println("Unable to add course %s with the course code %s for student %d. Cannot have course times overlap.".formatted(course.getCourseName(), course.getCourseID(), getStudentID()));
 		}
 	}
 
@@ -51,12 +53,13 @@ public class Student {
 		courses.remove(course);
 	}
 
+	// Displays the student's schedule 
 	public void displaySchedule() {
-		System.out.println("Courses for student with id: %d".formatted(studentID));
+		System.out.println("Courses for student with id: %d\n".formatted(studentNumber));
 		for(Course course : courses) {
 			System.out.println("Course Name: %s".formatted(course.getCourseName()));
 			System.out.println("Course Time: %s - %s".formatted(course.getStartTime(), course.getEndTime()));
-			System.out.println("------------------------------------------");
 		}
+		System.out.println("--------------------------------------------------");
 	}
 }
