@@ -9,6 +9,7 @@ public class Course {
     private LocalTime startTime;
     private LocalTime endTime;
     private HashMap<Integer, Student> roster;
+    // private AVLTree courseTree = new AVLTree();
 
 	public Course(String name, LocalTime startTime, LocalTime endTime) {
         this.setCourseID();
@@ -16,6 +17,7 @@ public class Course {
         this.setStartTime(startTime);
         this.setEndTime(endTime);
         this.roster = new HashMap<Integer, Student>();
+        // Node node = new Node(this.getCourseID());
     }
 	//Set Course unique Code
 	public void setCourseID(){
