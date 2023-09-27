@@ -22,5 +22,7 @@ _To run or compile the program, you need_ 🚴‍♂️
 
 
 ### Output📷
+- Here is an example of using the Student Menu:
+  
 
 
