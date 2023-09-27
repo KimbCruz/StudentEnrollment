@@ -19,10 +19,3 @@ _To run or compile the program, you need_ 🚴‍♂️
 
 - Below is a set of already enrolled students without the need of creating a new one:
   _Student ID: 10000001, 10000002, 10000003, 10000004, 10000005, 10000006_
-
-
-### Output📷
-- Here is an example of using the Student Menu:
-  
-
-
