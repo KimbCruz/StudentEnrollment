@@ -12,8 +12,18 @@ _To run or compile the program, you need_ 🚴‍♂️
 -A Java IDE such as Eclipse
 
 ### Installation:
-
+-Download the studentEnrollment folder and run it on your Java IDE
 ### Usage:
+-To start, run your program and a set of questions are asked respond accordingly if you want to be a student or professor. As a student, you can become a new student, with your unique student ID you will be able to view your schedule, add/remove courses. As a professor, you can add/remove a student from your course and display your course roster. 
+
+- Below is a set of already enrolled students without the need of creating a new one:
+  _Student ID: 10000001_
+  _Student ID: 10000002_
+  _Student ID: 10000003_
+  _Student ID: 10000004_
+  _Student ID: 10000005_
+  _Student ID: 10000006_
+
 
 ### Output📷
 
